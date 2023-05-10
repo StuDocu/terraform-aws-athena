@@ -38,6 +38,12 @@ variable "workgroup_bucket" {
   default     = null
 }
 
+variable "workgroup_bucket_acl" {
+  description = "Amazon S3 canned ACL that Athena should specify when storing query results. Valid value is BUCKET_OWNER_FULL_CONTROL."
+  type        = string
+  default     = null
+}
+
 variable "workspace_bytes_scanned_cutoff" {
   description = "The upper data usage limit (cutoff) for the amount of bytes a single query in the workgroup is allowed to scan. Defaults to 10 TB."
   type        = number

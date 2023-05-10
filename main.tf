@@ -75,6 +75,10 @@ resource "aws_athena_workgroup" "this" {
 
     result_configuration {
       output_location = "s3://${aws_s3_bucket.athena-workspace.bucket}/"
+
+      acl_configuration {
+        s3_acl_option = var.workgroup_bucket_acl
+      }
     }
   }
 
